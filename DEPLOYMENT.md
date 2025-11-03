@@ -48,7 +48,7 @@ Le Studio est déjà inclus à `/studio` - rien à faire!
 
 #### Option B: Sur Sanity.studio (séparé)
 ```bash
-cd stablo-free
+cd uywakuna-blog
 npm run sanity deploy
 ```
 
