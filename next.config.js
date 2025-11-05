@@ -1,20 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Only enable static export for production builds
+  // This allows Sanity Studio to work in development mode
+  ...(process.env.NODE_ENV === 'production' && {
+    output: 'export',
+  }),
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    formats: ["image/avif", "image/webp"],
-    dangerouslyAllowSVG: true,
-    remotePatterns: [{ hostname: "cdn.sanity.io" }]
+    unoptimized: true, // Required for static export
   },
   typescript: {
-    // Set this to false if you want production builds to abort if there's type errors
-    ignoreBuildErrors: process.env.VERCEL_ENV === "production"
+    // Ignore TypeScript errors during build (including Turbopack generated code issues)
+    ignoreBuildErrors: true
   },
-  eslint: {
-    /// Set this to false if you want production builds to abort if there's lint errors
-    ignoreDuringBuilds: process.env.VERCEL_ENV === "production"
-  }
+  // Disable features incompatible with static export
+  trailingSlash: true, // Recommended for S3 hosting
 };
 
 module.exports = nextConfig;

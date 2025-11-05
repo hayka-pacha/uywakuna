@@ -98,10 +98,10 @@ export default function Navbar(props) {
                     )}
                   </Link>
                   <Link href="/" className="hidden flex-col items-center dark:flex">
-                    {props.logoalt ? (
+                    {(props.logoalt || props.logo) ? (
                       <>
                         <Image
-                          {...urlForImage(props.logoalt)}
+                          {...urlForImage(props.logoalt || props.logo)}
                           alt="Uywakuna - Tu zoológico virtual"
                           priority={true}
                           sizes="(max-width: 640px) 100vw, 200px"

@@ -10,8 +10,6 @@
 import { Metadata, Viewport } from 'next'
 import Studio from './studio'
 
-export const dynamic = 'force-static'
-
 export const metadata: Metadata = {
   title: 'Sanity Studio',
   description: 'Content management for Uywakuna Blog',

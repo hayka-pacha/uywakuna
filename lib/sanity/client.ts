@@ -4,11 +4,10 @@ import {
   limitquery,
   paginatedquery,
   configQuery,
+  aboutQuery,
   singlequery,
   pathquery,
   allauthorsquery,
-  authorsquery,
-  postsbyauthorquery,
   postsbycatquery,
   catpathquery,
   catquery,
@@ -59,6 +58,13 @@ export async function getSettings() {
   return [];
 }
 
+export async function getAboutPage() {
+  if (client) {
+    return (await client.fetch(aboutQuery)) || {};
+  }
+  return {};
+}
+
 export async function getPostBySlug(slug) {
   if (client) {
     return (await client.fetch(singlequery, { slug })) || {};
@@ -83,21 +89,6 @@ export async function getAllPostsSlugs() {
     return slugs;
   }
   return [];
-}
-// Author
-export async function getAllAuthorsSlugs() {
-  if (client) {
-    const slugs = (await client.fetch(authorsquery)) || [];
-    return slugs.map(slug => ({ author: slug }));
-  }
-  return [];
-}
-
-export async function getAuthorPostsBySlug(slug) {
-  if (client) {
-    return (await client.fetch(postsbyauthorquery, { slug })) || {};
-  }
-  return {};
 }
 
 export async function getAllAuthors() {
