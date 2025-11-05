@@ -72,7 +72,7 @@ npm run sanity deploy
 
 3. **Utilise un domaine personnalisé**
    - Configure dans Vercel Settings > Domains
-   - Ajoute ton domaine (ex: uywakuna.com)
+   - Ajoute ton domaine (ex: uywakuna.info)
 
 ## Monitoring
 

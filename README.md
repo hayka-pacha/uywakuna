@@ -1,6 +1,8 @@
 # Uywakuna - Tu Zoológico Virtual
 
-Blog bilingue (Espagnol/Français) sur la faune et la nature, construit avec Next.js 14 et Sanity CMS.
+Blog bilingue (Espagnol/Français) sur la faune et la nature, construit avec Next.js 16 et Sanity CMS v4.
+
+> **Version 4.0.0** - Site statique optimisé pour AWS S3 | [Voir le CHANGELOG](./CHANGELOG.md)
 
 ## 🌍 À propos
 
@@ -8,11 +10,12 @@ Uywakuna est un blog éducatif dédié à la découverte des animaux et de la na
 
 ## 🚀 Technologies
 
-- **Next.js 14** - Framework React avec App Router
-- **Sanity CMS** - Headless CMS pour la gestion du contenu
-- **Tailwind CSS** - Framework CSS utility-first
-- **TypeScript** - Typage statique
-- **Vercel** - Plateforme de déploiement
+- **Next.js 16.0.1** - Framework React avec App Router et export statique
+- **React 19.2.0** - Dernière version avec nouvelles fonctionnalités
+- **Sanity CMS v4.13.0** - Headless CMS pour la gestion du contenu
+- **TypeScript 5.9.3** - Typage statique avancé
+- **Tailwind CSS 3.4.17** - Framework CSS utility-first
+- **AWS S3 + CloudFront** - Hébergement statique et CDN
 
 ## 📋 Prérequis
 
@@ -100,14 +103,31 @@ npm run lint            # Vérifie le code
 
 ## 🚀 Déploiement
 
-Voir [DEPLOYMENT.md](./DEPLOYMENT.md) pour les instructions détaillées de déploiement sur Vercel.
+### Déploiement sur AWS S3 (Recommandé)
 
-### Déploiement rapide
+Le site est maintenant configuré pour l'export statique et peut être hébergé sur AWS S3.
+
+**Déploiement rapide :**
+
+```bash
+# Build le site statique
+npm run build
+
+# Déploie sur S3 (nécessite AWS CLI configuré)
+./scripts/deploy-s3.sh uywakuna-blog
+```
+
+**Documentation complète :** Voir [docs/DEPLOYMENT_S3.md](./docs/DEPLOYMENT_S3.md)
+
+### Déploiement sur Vercel (Alternative)
+
+Pour un déploiement traditionnel avec le studio intégré, consultez [DEPLOYMENT.md](./DEPLOYMENT.md).
 
 1. Pousse ton code sur GitHub
 2. Connecte ton repo à Vercel
 3. Configure les variables d'environnement
-4. Deploy!
+4. Désactive `output: 'export'` dans `next.config.js`
+5. Deploy!
 
 ## 🎨 Personnalisation
 

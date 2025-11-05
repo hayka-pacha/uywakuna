@@ -4,12 +4,15 @@ import Archive from "./archive";
 import Loading from "@/components/loading";
 import { getPaginatedPosts } from "@/lib/sanity/client";
 
-export const dynamic = "force-dynamic";
-
-export const runtime = "edge";
+// Static export: generate only the first page
+export async function generateStaticParams() {
+  return []; // Only generate the default page
+}
 
 export default async function ArchivePage({ searchParams }) {
-  const page = searchParams?.page;
+  // Wait for searchParams to resolve (Next.js 15+)
+  const resolvedSearchParams = await searchParams;
+  const page = resolvedSearchParams?.page;
   const pageIndex = parseInt(page, 10) || 1;
   const POSTS_PER_PAGE = 6;
 
@@ -32,9 +35,9 @@ export default async function ArchivePage({ searchParams }) {
           </p>
         </div>
         <Suspense
-          key={searchParams?.page || "1"}
+          key={pageIndex}
           fallback={<Loading />}>
-          <Archive posts={posts} searchParams={searchParams} />
+          <Archive posts={posts} searchParams={resolvedSearchParams} />
         </Suspense>
       </Container>
     </>

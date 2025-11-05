@@ -11,8 +11,11 @@ async function sharedMetaData(params) {
   const title = settings?.[`title_${locale}`] || settings?.title_es || "Uywakuna";
   const description = settings?.[`description_${locale}`] || settings?.description_es || "Tu zoológico virtual";
 
+  // Set metadataBase - use settings URL or default to production URL
+  const baseUrl = settings?.url || 'https://uywakuna.info';
+
   return {
-    metadataBase: settings?.url ? new URL(settings.url) : undefined,
+    metadataBase: new URL(baseUrl),
     title: {
       default: title,
       template: `%s | ${title}`

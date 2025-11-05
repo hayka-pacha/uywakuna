@@ -55,8 +55,8 @@ export default function Featured({ post, pathPrefix }) {
             <div className="flex mt-4 space-x-3 text-gray-500 md:mt-8 ">
               <div className="flex flex-col gap-3 md:items-center md:flex-row">
                 <div className="flex items-center gap-3">
-                  <div className="relative flex-shrink-0 w-5 h-5">
-                    {AuthorimageProps && (
+                  {AuthorimageProps && (
+                    <div className="relative flex-shrink-0 w-5 h-5">
                       <Image
                         src={AuthorimageProps.src}
                         alt={post?.author?.name}
@@ -64,8 +64,8 @@ export default function Featured({ post, pathPrefix }) {
                         fill
                         sizes="100vw"
                       />
-                    )}
-                  </div>
+                    </div>
+                  )}
                   <p className="text-gray-100 ">
                     {post.author.name}{" "}
                     <span className="hidden pl-2 md:inline"> ·</span>

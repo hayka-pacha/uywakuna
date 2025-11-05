@@ -27,30 +27,6 @@ export const authorType = defineType({
         hotspot: true,
       },
     }),
-    defineField({
-      name: 'bio_es',
-      title: 'Bio (Spanish)',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        }),
-      ],
-    }),
-    defineField({
-      name: 'bio_fr',
-      title: 'Bio (French)',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        }),
-      ],
-    }),
   ],
   preview: {
     select: {
