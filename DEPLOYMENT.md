@@ -19,18 +19,18 @@
 2. **Va sur [vercel.com](https://vercel.com)**
    - Connecte-toi avec GitHub
    - Clique sur "Add New Project"
-   - Sélectionne ton repo
+   - Sélectionne le repo `hayka-pacha/uywakuna`
 
 3. **Configure les variables d'environnement**
    
    Dans les settings Vercel, ajoute:
    
    ```
-   NEXT_PUBLIC_SANITY_PROJECT_ID=3pi0sxz7
+   NEXT_PUBLIC_SANITY_PROJECT_ID=votre-project-id
    NEXT_PUBLIC_SANITY_DATASET=production
    NEXT_PUBLIC_SANITY_API_VERSION=2023-03-25
-   SANITY_REVALIDATE_SECRET=ton-secret-ici
-   NEXT_PUBLIC_SITE_URL=https://ton-domaine.vercel.app
+   SANITY_REVALIDATE_SECRET=votre-secret-unique
+   NEXT_PUBLIC_SITE_URL=https://votre-domaine.vercel.app
    NEXT_PUBLIC_DEFAULT_LOCALE=es
    ```
 

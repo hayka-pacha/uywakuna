@@ -27,7 +27,7 @@ Uywakuna est un blog éducatif dédié à la découverte des animaux et de la na
 
 1. **Clone le projet**
    ```bash
-   git clone <ton-repo>
+   git clone git@github.com:hayka-pacha/uywakuna.git
    cd uywakuna
    ```
 
