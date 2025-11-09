@@ -80,6 +80,7 @@ uywakuna/
 - ✅ Mode sombre/clair
 - ✅ Responsive design
 - ✅ Sitemap automatique
+- ✅ Analytics Vercel intégrés
 
 ## 📝 Scripts disponibles
 
