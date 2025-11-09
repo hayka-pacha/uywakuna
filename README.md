@@ -2,7 +2,7 @@
 
 Blog bilingue (Espagnol/Français) sur la faune et la nature, construit avec Next.js 16 et Sanity CMS v4.
 
-> **Version 4.0.0** - Déployé sur Vercel | [Voir le CHANGELOG](./docs/CHANGELOG.md)
+> Déployé sur Vercel | [Site en production](https://uywakuna.info)
 
 ## 🌍 À propos
 
