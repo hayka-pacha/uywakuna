@@ -2,7 +2,7 @@
 
 Blog bilingue (Espagnol/Français) sur la faune et la nature, construit avec Next.js 16 et Sanity CMS v4.
 
-> **Version 4.0.0** - Site statique optimisé pour AWS S3 | [Voir le CHANGELOG](./docs/CHANGELOG.md)
+> **Version 4.0.0** - Déployé sur Vercel | [Voir le CHANGELOG](./docs/CHANGELOG.md)
 
 ## 🌍 À propos
 
@@ -10,12 +10,12 @@ Uywakuna est un blog éducatif dédié à la découverte des animaux et de la na
 
 ## 🚀 Technologies
 
-- **Next.js 16.0.1** - Framework React avec App Router et export statique
+- **Next.js 16.0.1** - Framework React avec App Router
 - **React 19.2.0** - Dernière version avec nouvelles fonctionnalités
 - **Sanity CMS v4.13.0** - Headless CMS pour la gestion du contenu
 - **TypeScript 5.9.3** - Typage statique avancé
 - **Tailwind CSS 3.4.17** - Framework CSS utility-first
-- **AWS S3 + CloudFront** - Hébergement statique et CDN
+- **Vercel** - Hébergement et déploiement continu
 
 ## 📋 Prérequis
 
@@ -102,31 +102,27 @@ npm run lint            # Vérifie le code
 
 ## 🚀 Déploiement
 
-### Déploiement sur AWS S3 (Recommandé)
+### Déploiement sur Vercel
 
-Le site est maintenant configuré pour l'export statique et peut être hébergé sur AWS S3.
+Le site est déployé automatiquement sur Vercel à chaque push sur la branche `main`.
 
-**Déploiement rapide :**
+**Déploiement automatique :**
 
-```bash
-# Build le site statique
-npm run build
+1. Push ton code sur GitHub
+   ```bash
+   git push origin main
+   ```
 
-# Déploie sur S3 (nécessite AWS CLI configuré)
-./scripts/deploy-s3.sh uywakuna-blog
-```
+2. Vercel détecte automatiquement le changement et déploie
 
-**Documentation complète :** Voir [docs/DEPLOYMENT_S3.md](./docs/DEPLOYMENT_S3.md)
+**Configuration manuelle (première fois) :**
 
-### Déploiement sur Vercel (Alternative)
+1. Va sur [vercel.com](https://vercel.com)
+2. Importe le repo GitHub `hayka-pacha/uywakuna`
+3. Configure les variables d'environnement (voir [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md))
+4. Deploy !
 
-Pour un déploiement traditionnel avec le studio intégré, consultez [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md).
-
-1. Pousse ton code sur GitHub
-2. Connecte ton repo à Vercel
-3. Configure les variables d'environnement
-4. Désactive `output: 'export'` dans `next.config.js`
-5. Deploy!
+**Site en production :** [uywakuna.info](https://uywakuna.info)
 
 ## 🎨 Personnalisation
 
@@ -153,11 +149,8 @@ Les contributions sont les bienvenues! N'hésite pas à ouvrir une issue ou une 
 
 ## 📚 Documentation
 
-- [Guide de démarrage rapide](./docs/QUICK_START_GUIDE.md)
-- [Déploiement Vercel](./docs/DEPLOYMENT.md)
-- [Déploiement AWS S3](./docs/DEPLOYMENT_S3.md)
-- [Changelog](./docs/CHANGELOG.md)
-- [Guide de mise à niveau](./docs/UPGRADE_SUMMARY.md)
+- [Guide utilisateur](./docs/GUIDE.md) - Gérer le contenu et les images
+- [Déploiement Vercel](./docs/DEPLOYMENT.md) - Configuration et déploiement
 
 ---
 
