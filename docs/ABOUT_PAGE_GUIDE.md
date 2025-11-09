@@ -174,7 +174,7 @@ Configurez des webhooks Sanity pour rebuild automatiquement le site quand vous m
 
 - [Documentation Sanity Portable Text](https://www.sanity.io/docs/block-content)
 - [Guide de déploiement S3](./DEPLOYMENT_S3.md)
-- [Changelog du projet](../CHANGELOG.md)
+- [Changelog du projet](./CHANGELOG.md)
 
 ---
 

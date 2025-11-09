@@ -2,7 +2,7 @@
 
 Blog bilingue (Espagnol/Français) sur la faune et la nature, construit avec Next.js 16 et Sanity CMS v4.
 
-> **Version 4.0.0** - Site statique optimisé pour AWS S3 | [Voir le CHANGELOG](./CHANGELOG.md)
+> **Version 4.0.0** - Site statique optimisé pour AWS S3 | [Voir le CHANGELOG](./docs/CHANGELOG.md)
 
 ## 🌍 À propos
 
@@ -74,13 +74,12 @@ uywakuna/
 
 - ✅ Blog bilingue (ES/FR)
 - ✅ Gestion de contenu avec Sanity CMS
+- ✅ Pages de catégories dynamiques
 - ✅ Optimisation des images automatique
 - ✅ SEO optimisé
 - ✅ Mode sombre/clair
 - ✅ Responsive design
 - ✅ Sitemap automatique
-- ✅ RSS feed
-- ✅ Formulaire de contact
 
 ## 📝 Scripts disponibles
 
@@ -121,7 +120,7 @@ npm run build
 
 ### Déploiement sur Vercel (Alternative)
 
-Pour un déploiement traditionnel avec le studio intégré, consultez [DEPLOYMENT.md](./DEPLOYMENT.md).
+Pour un déploiement traditionnel avec le studio intégré, consultez [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md).
 
 1. Pousse ton code sur GitHub
 2. Connecte ton repo à Vercel
@@ -152,9 +151,13 @@ Ce projet est basé sur le template Stablo de Web3Templates.
 
 Les contributions sont les bienvenues! N'hésite pas à ouvrir une issue ou une pull request.
 
-## 📧 Contact
+## 📚 Documentation
 
-Pour toute question, contacte-nous via le formulaire de contact sur le site.
+- [Guide de démarrage rapide](./docs/QUICK_START_GUIDE.md)
+- [Déploiement Vercel](./docs/DEPLOYMENT.md)
+- [Déploiement AWS S3](./docs/DEPLOYMENT_S3.md)
+- [Changelog](./docs/CHANGELOG.md)
+- [Guide de mise à niveau](./docs/UPGRADE_SUMMARY.md)
 
 ---
 
