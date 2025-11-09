@@ -76,10 +76,20 @@ npm run sanity deploy
 
 ## Monitoring
 
-### Vercel Analytics (Gratuit)
-- Va dans Settings > Analytics
-- Active "Web Analytics"
-- Vois les performances en temps réel
+### Vercel Analytics (Intégré)
+Le projet est déjà configuré avec `@vercel/analytics` pour tracker automatiquement :
+- Pages vues
+- Visiteurs uniques
+- Temps de chargement
+- Core Web Vitals
+
+**Pour activer dans le dashboard :**
+1. Va dans ton projet sur Vercel
+2. Clique sur l'onglet "Analytics"
+3. Clique sur "Enable Web Analytics"
+4. Les données commenceront à apparaître après le prochain déploiement
+
+[Documentation Vercel Analytics](https://vercel.com/docs/analytics/quickstart)
 
 ### Sanity Monitoring
 - Dashboard: https://sanity.io/manage
