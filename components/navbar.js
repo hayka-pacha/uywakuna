@@ -23,10 +23,6 @@ export default function Navbar(props) {
     {
       label: t("nav_about"),
       href: "/about"
-    },
-    {
-      label: t("nav_contact"),
-      href: "/contact"
     }
   ];
 
