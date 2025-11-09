@@ -206,7 +206,7 @@ Configurez des webhooks Sanity pour rebuild automatique :
 // Dans Sanity Studio
 {
   name: 'rebuild-website',
-  url: 'https://api.github.com/repos/user/uywakuna/dispatches',
+  url: 'https://api.github.com/repos/hayka-pacha/uywakuna/dispatches',
   on: ['create', 'update', 'delete'],
   filter: '_type == "post"'
 }
