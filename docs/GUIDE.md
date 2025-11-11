@@ -29,6 +29,19 @@ Puis : `http://localhost:3000/studio`
    - **Catégorie** : Sélectionner une catégorie existante
 3. **Publish** ✅
 
+### 🌐 Traduire automatiquement (DeepL)
+
+**Nouveau !** Tu peux traduire automatiquement tes articles :
+
+1. Écris ton article dans une langue (ES ou FR)
+2. Clique sur le bouton **"Traduire"** en haut
+3. Choisis la direction (ES → FR ou FR → ES)
+4. La traduction se fait automatiquement !
+
+**Note** : Configure ta clé API DeepL dans `.env.local` (voir [docs/DEEPL_TRANSLATION.md](./DEEPL_TRANSLATION.md))
+
+**Gratuit** : 500 000 caractères/mois (~200 articles)
+
 ### Modifier la page About
 
 1. **Studio** → **"About Page"**
