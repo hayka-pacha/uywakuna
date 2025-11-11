@@ -1,19 +1,11 @@
 import {DocumentTextIcon} from '@sanity/icons'
 import {defineArrayMember, defineField, defineType} from 'sanity'
-import {TranslateAction} from '../plugins/translateAction'
 
 export const postType = defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
   icon: DocumentTextIcon,
-  __experimental_actions: [
-    'create',
-    'update',
-    TranslateAction,
-    'delete',
-    'publish'
-  ],
   fields: [
     defineField({
       name: 'title_es',
