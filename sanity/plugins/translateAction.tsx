@@ -82,6 +82,7 @@ export const TranslateAction: DocumentActionComponent = (props) => {
   const { patch } = useDocumentOperation(id, type);
   const [isTranslating, setIsTranslating] = useState(false);
   const [translationStatus, setTranslationStatus] = useState<string>('');
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   // Ne montrer que pour les posts
   if (type !== 'post') {
@@ -193,10 +194,12 @@ export const TranslateAction: DocumentActionComponent = (props) => {
     label: 'Traduire',
     icon: TranslateIcon,
     onHandle: () => {
-      // Cette action ouvre un dialog personnalisé
+      // Ouvrir le dialog seulement quand on clique sur le bouton Traduire
+      setDialogOpen(true);
     },
-    dialog: isTranslating ? false : {
+    dialog: dialogOpen && !isTranslating ? {
       type: 'popover',
+      onClose: () => setDialogOpen(false),
       content: (
         <Card padding={4}>
           <Stack space={4}>
@@ -244,7 +247,7 @@ export const TranslateAction: DocumentActionComponent = (props) => {
           </Stack>
         </Card>
       ),
-    },
+    } : false,
   };
 };
 
