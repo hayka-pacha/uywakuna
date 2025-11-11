@@ -13,37 +13,31 @@ interface PostDocument {
   body_fr?: any[];
 }
 
-// Fonction pour traduire avec DeepL
+// Fonction pour traduire avec DeepL via notre API route
 async function translateText(
   text: string,
   sourceLang: 'ES' | 'FR',
   targetLang: 'ES' | 'FR'
 ): Promise<string> {
-  const apiKey = process.env.NEXT_PUBLIC_DEEPL_API_KEY;
-  
-  if (!apiKey) {
-    throw new Error('DeepL API key not configured. Please add NEXT_PUBLIC_DEEPL_API_KEY to Vercel environment variables.');
-  }
-
-  const response = await fetch('https://api-free.deepl.com/v2/translate', {
+  const response = await fetch('/api/translate', {
     method: 'POST',
     headers: {
-      'Authorization': `DeepL-Auth-Key ${apiKey}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      text: [text],
-      source_lang: sourceLang,
-      target_lang: targetLang,
+      text,
+      sourceLang,
+      targetLang,
     }),
   });
 
   if (!response.ok) {
-    throw new Error(`DeepL API error: ${response.statusText}`);
+    const errorData = await response.json();
+    throw new Error(errorData.error || `Translation API error: ${response.statusText}`);
   }
 
   const data = await response.json();
-  return data.translations[0].text;
+  return data.translatedText;
 }
 
 // Fonction pour extraire le texte du blockContent
