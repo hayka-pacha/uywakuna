@@ -38,7 +38,7 @@ Puis : `http://localhost:3000/studio`
 3. Choisis la direction (ES → FR ou FR → ES)
 4. La traduction se fait automatiquement !
 
-**Note** : Configure ta clé API DeepL dans `.env.local` (voir [docs/DEEPL_TRANSLATION.md](./DEEPL_TRANSLATION.md))
+**Note** : La clé API DeepL est déjà configurée sur Vercel. En local, ajoute `NEXT_PUBLIC_DEEPL_API_KEY` dans `.env.local` (voir [docs/DEEPL_TRANSLATION.md](./DEEPL_TRANSLATION.md))
 
 **Gratuit** : 500 000 caractères/mois (~200 articles)
 

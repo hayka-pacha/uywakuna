@@ -15,10 +15,10 @@ Ce projet intègre la traduction automatique via l'API DeepL directement dans Sa
 Ajoute la clé dans ton fichier `.env.local` :
 
 ```bash
-SANITY_STUDIO_DEEPL_API_KEY=votre-clé-deepl-ici
+NEXT_PUBLIC_DEEPL_API_KEY=votre-clé-deepl-ici
 ```
 
-**Important** : Utilise `SANITY_STUDIO_` comme préfixe pour que la variable soit disponible dans le Studio.
+**Important** : Utilise `NEXT_PUBLIC_` comme préfixe pour que la variable soit disponible côté client dans le Studio.
 
 ### 3. Redémarrer le serveur
 
@@ -83,9 +83,10 @@ npm run dev
 ### "DeepL API key not configured"
 
 **Solution** :
-1. Vérifie que `SANITY_STUDIO_DEEPL_API_KEY` est dans `.env.local`
+1. Vérifie que `NEXT_PUBLIC_DEEPL_API_KEY` est dans `.env.local`
 2. Redémarre le serveur (`npm run dev`)
 3. Vide le cache du navigateur (Ctrl+Shift+R)
+4. Sur Vercel, vérifie que la variable est bien configurée dans Settings > Environment Variables
 
 ### "DeepL API error: 403"
 
