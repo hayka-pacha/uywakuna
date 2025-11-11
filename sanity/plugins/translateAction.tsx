@@ -19,10 +19,10 @@ async function translateText(
   sourceLang: 'ES' | 'FR',
   targetLang: 'ES' | 'FR'
 ): Promise<string> {
-  const apiKey = process.env.SANITY_STUDIO_DEEPL_API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_DEEPL_API_KEY;
   
   if (!apiKey) {
-    throw new Error('DeepL API key not configured');
+    throw new Error('DeepL API key not configured. Please add NEXT_PUBLIC_DEEPL_API_KEY to Vercel environment variables.');
   }
 
   const response = await fetch('https://api-free.deepl.com/v2/translate', {
