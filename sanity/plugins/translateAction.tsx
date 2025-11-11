@@ -88,7 +88,12 @@ export const TranslateAction: DocumentActionComponent = (props) => {
     return null;
   }
 
-  const doc = (draft || published) as PostDocument;
+  const doc = (draft || published) as PostDocument | null;
+
+  // Si le document n'existe pas encore, ne rien afficher
+  if (!doc) {
+    return null;
+  }
 
   const translateEsToFr = async () => {
     setIsTranslating(true);
@@ -216,7 +221,7 @@ export const TranslateAction: DocumentActionComponent = (props) => {
                   icon={TranslateIcon}
                   tone="primary"
                   onClick={translateEsToFr}
-                  disabled={isTranslating || !doc.title_es}
+                  disabled={isTranslating || !doc || !doc.title_es}
                   style={{ width: '100%' }}
                 />
                 
@@ -225,7 +230,7 @@ export const TranslateAction: DocumentActionComponent = (props) => {
                   icon={TranslateIcon}
                   tone="primary"
                   onClick={translateFrToEs}
-                  disabled={isTranslating || !doc.title_fr}
+                  disabled={isTranslating || !doc || !doc.title_fr}
                   style={{ width: '100%' }}
                 />
               </Flex>
