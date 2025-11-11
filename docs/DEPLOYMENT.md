@@ -32,6 +32,7 @@
    SANITY_REVALIDATE_SECRET=votre-secret-unique
    NEXT_PUBLIC_SITE_URL=https://votre-domaine.vercel.app
    NEXT_PUBLIC_DEFAULT_LOCALE=es
+   NEXT_PUBLIC_DEEPL_API_KEY=votre-cle-deepl (optionnel)
    ```
 
 4. **Deploy!**
@@ -48,7 +49,7 @@ Le Studio est déjà inclus à `/studio` - rien à faire!
 
 #### Option B: Sur Sanity.studio (séparé)
 ```bash
-cd uywakuna-blog
+cd uywakuna
 npm run sanity deploy
 ```
 
