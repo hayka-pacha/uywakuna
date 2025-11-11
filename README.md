@@ -95,7 +95,6 @@ npm start               # Lance le serveur de production
 
 # Sanity
 npm run sanity          # Lance Sanity Studio en standalone
-npm run sanity-import   # Importe des données
 npm run sanity-export   # Exporte des données
 
 # Autres
