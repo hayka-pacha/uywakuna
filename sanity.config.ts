@@ -12,6 +12,7 @@ import {structureTool} from 'sanity/structure'
 import {apiVersion, dataset, projectId} from './sanity/env'
 import {schema} from './sanity/schemaTypes'
 import {structure as deskStructure} from './sanity/desk-structure'
+import {TranslateAction} from './sanity/plugins/translateAction'
 
 export default defineConfig({
   basePath: '/studio',
@@ -27,4 +28,13 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
   ],
+  document: {
+    actions: (prev, context) => {
+      // Add translate action only for post documents
+      if (context.schemaType === 'post') {
+        return [...prev, TranslateAction]
+      }
+      return prev
+    },
+  },
 })
