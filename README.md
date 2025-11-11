@@ -74,6 +74,7 @@ uywakuna/
 
 - ✅ Blog bilingue (ES/FR)
 - ✅ Gestion de contenu avec Sanity CMS
+- ✅ **Traduction automatique DeepL** (ES ↔ FR)
 - ✅ Pages de catégories dynamiques
 - ✅ Optimisation des images automatique
 - ✅ SEO optimisé
@@ -151,6 +152,7 @@ Les contributions sont les bienvenues! N'hésite pas à ouvrir une issue ou une 
 ## 📚 Documentation
 
 - [Guide utilisateur](./docs/GUIDE.md) - Gérer le contenu et les images
+- [Traduction automatique](./docs/DEEPL_TRANSLATION.md) - Configurer et utiliser DeepL
 - [Déploiement Vercel](./docs/DEPLOYMENT.md) - Configuration et déploiement
 
 ---
