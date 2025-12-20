@@ -43,7 +43,6 @@
     "react-iframe": "^1.8.5",
     "sanity": "^4.13.0",
     "sanity-plugin-asset-source-unsplash": "^4.0.1",
-    "styled-components": "^6.1.19",
     "swr": "^2.2.4",
     "typescript": "^5.3.3"
   },

@@ -18,7 +18,7 @@ export default async function ArchivePage({ searchParams }) {
 
   const params = {
     pageIndex: (pageIndex - 1) * POSTS_PER_PAGE,
-    limit: pageIndex * POSTS_PER_PAGE
+    limit: POSTS_PER_PAGE
   };
 
   const posts = await getPaginatedPosts(params);
@@ -44,4 +44,4 @@ export default async function ArchivePage({ searchParams }) {
   );
 }
 
-// export const revalidate = 60;
+export const revalidate = 60;

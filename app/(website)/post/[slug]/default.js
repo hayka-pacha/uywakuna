@@ -18,9 +18,6 @@ export default function Post(props) {
   const { loading, post } = props;
   const { locale, t } = useLanguage();
 
-  console.log('Post data:', post);
-  console.log('Current locale:', locale);
-
   const slug = post?.slug_es || post?.slug_fr;
 
   if (!loading && !slug) {
