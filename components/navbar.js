@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment } from "react";
+import { Fragment, useMemo } from "react";
 import { Menu, Transition, Disclosure } from "@headlessui/react";
 import Container from "@/components/container";
 import Link from "next/link";
@@ -15,7 +15,7 @@ import { useLanguage } from "@/lib/i18n/context";
 export default function Navbar(props) {
   const { t } = useLanguage();
 
-  const leftmenu = [
+  const leftmenu = useMemo(() => [
     {
       label: t("nav_home"),
       href: "/"
@@ -24,16 +24,16 @@ export default function Navbar(props) {
       label: t("nav_about"),
       href: "/about"
     }
-  ];
+  ], [t]);
 
-  const rightmenu = [
+  const rightmenu = useMemo(() => [
     {
       label: t("nav_archive"),
       href: "/archive"
     }
-  ];
+  ], [t]);
 
-  const mobilemenu = [...leftmenu, ...rightmenu];
+  const mobilemenu = useMemo(() => [...leftmenu, ...rightmenu], [leftmenu, rightmenu]);
 
   return (
     <Container>
