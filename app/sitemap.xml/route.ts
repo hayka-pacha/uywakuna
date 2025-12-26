@@ -54,8 +54,9 @@ export async function GET() {
       const pages: string[] = [];
       const lastmod = new Date(post._updatedAt || post.publishedAt || post._createdAt).toISOString();
 
-      // Get image URL if available
-      const imageUrl = post.mainImage?.asset ? urlForImage(post.mainImage)?.src : null;
+      // Get image URL if available and escape it
+      const rawImageUrl = post.mainImage?.asset ? urlForImage(post.mainImage)?.src : null;
+      const imageUrl = rawImageUrl ? escapeXml(rawImageUrl) : null;
 
       // Spanish version (canonical)
       if (post.slug_es?.current) {
