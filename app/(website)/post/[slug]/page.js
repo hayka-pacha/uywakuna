@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
   const title = post?.[`title_${locale}`] || post?.title_es || post?.title_fr || 'Uywakuna Blog';
   const description = post?.[`excerpt_${locale}`] || post?.excerpt_es || post?.excerpt_fr || '';
   const imageUrl = post?.mainImage?.asset
-    ? urlForImage(post.mainImage)?.width(1200).height(630).url()
+    ? urlForImage(post.mainImage)?.src
     : 'https://uywakuna.info/img/opengraph.jpg';
 
   // Define canonical as ES version, FR as alternate
