@@ -1,0 +1,90 @@
+# Uywakuna - Tu Zoológico Virtual
+
+> Blog bilingue éducatif (Espagnol/Français) dédié à la découverte des animaux et de la nature. Explorez la biodiversité mondiale à travers des articles détaillés sur la faune, les habitats naturels et la conservation des espèces.
+
+## Thématiques Principales
+
+### Animaux & Faune Sauvage
+- **Mammifères** : Jaguars, paresseux, dauphins roses de l'Amazone, singes pygmées
+- **Oiseaux** : Condors, toucans, aras hyacinthes
+- **Reptiles** : Anacondas, caïmans noirs
+- **Poissons** : Piranhas
+- **Insectes** : Fourmis coupeuses de feuilles
+
+### Biomes & Écosystèmes
+- Forêt amazonienne
+- Cordillère des Andes
+- Zones humides d'Amérique du Sud
+- Habitats naturels et biodiversité
+
+### Conservation & Écologie
+- État de conservation des espèces (IUCN)
+- Menaces environnementales
+- Protection de la faune sauvage
+- Éducation environnementale
+
+## Pages Clés
+
+- `/` : Accueil - Découvrez tous nos articles sur la faune
+- `/about` : À propos d'Uywakuna et notre mission éducative
+- `/archive` : Archives complètes de tous les articles
+- `/category/mamiferos` : Articles sur les mammifères
+- `/category/aves` : Articles sur les oiseaux
+- `/category/reptiles` : Articles sur les reptiles
+- `/category/felino` : Focus sur les félins sauvages
+
+## Articles Phares
+
+### Mammifères
+- `/post/jaguar-panthera-onca` : Le jaguar, plus grand félin d'Amérique
+- `/post/el-oso-perezoso-bradipus-variegatus` : Le paresseux et son mode de vie unique
+- `/post/delfin-rosado-del-amazonas-inia-geoffrensis` : Le dauphin rose d'Amazonie
+
+### Oiseaux
+- `/post/el-condor-vultur-gryphus` : Le condor des Andes, roi des cieux
+- `/post/guacamayo-azul-anodorhynchus-hyacinthinus` : L'ara hyacinthe, perroquet géant
+- `/post/tucan-ramphastos-tueanus` : Le toucan et son bec emblématique
+
+### Reptiles
+- `/post/anaconda-eunectes-murinus` : L'anaconda, serpent géant aquatique
+- `/post/caiman-negro-melanosuchus-niger` : Le caïman noir de l'Amazonie
+
+## Langues Disponibles
+
+Le site est entièrement bilingue :
+- **Español (ES)** : Langue par défaut, articles scientifiquement rigoureux
+- **Français (FR)** : Traductions complètes de tous les contenus
+
+Chaque article existe en deux versions avec URLs distinctes.
+
+## Informations Techniques
+
+- **CMS** : Sanity CMS v4
+- **Framework** : Next.js 16 avec App Router
+- **Sitemap** : https://uywakuna.info/sitemap.xml
+- **Fréquence de mise à jour** : Articles ajoutés régulièrement
+- **Optimisation images** : Toutes les images sont optimisées via Sanity CDN
+
+## Public Cible
+
+- Étudiants et enseignants en biologie/écologie
+- Familles recherchant du contenu éducatif sur les animaux
+- Passionnés de nature et de biodiversité
+- Communauté hispanophone et francophone
+
+## Taxonomie & Classifications
+
+Tous les articles suivent la nomenclature scientifique officielle :
+- Nom commun (ES/FR)
+- Nom scientifique (latin)
+- Classification complète (Règne, Embranchement, Classe, Ordre, Famille, Genre, Espèce)
+
+## Contact
+
+- **URL** : https://uywakuna.info
+- **Email** : contact@uywakuna.info
+- **GitHub** : https://github.com/hayka-pacha/uywakuna
+
+---
+
+*Note : Uywakuna signifie "animaux" en quechua, reflétant notre engagement envers la biodiversité et le patrimoine naturel sud-américain.*
