@@ -9,8 +9,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
-    "sitemap": "next-sitemap",
     "start": "next start",
     "sanity": "sanity dev",
     "sanity-export": "sanity dataset export production lib/sanity/data/production.tar.gz",
