@@ -48,3 +48,7 @@ next-env.d.ts
 /.sanity
 /dist
 lib/sanity/data/*.tar.gz
+
+# SEO Strategy (confidential)
+docs/SEO_STRATEGY.md
+docs/IMPLEMENTATION_GUIDE.md
