@@ -44,9 +44,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const pages: MetadataRoute.Sitemap = [];
 
       // Spanish version (canonical)
-      if (post.slug_es) {
+      if (post.slug_es?.current) {
         pages.push({
-          url: `${baseUrl}/post/${post.slug_es}`,
+          url: `${baseUrl}/post/${post.slug_es.current}`,
           lastModified: new Date(post._updatedAt || post.publishedAt || post._createdAt),
           changeFrequency: 'weekly',
           priority: 0.9,
@@ -54,9 +54,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
 
       // French version
-      if (post.slug_fr) {
+      if (post.slug_fr?.current) {
         pages.push({
-          url: `${baseUrl}/post/${post.slug_fr}`,
+          url: `${baseUrl}/post/${post.slug_fr.current}`,
           lastModified: new Date(post._updatedAt || post.publishedAt || post._createdAt),
           changeFrequency: 'weekly',
           priority: 0.9,
