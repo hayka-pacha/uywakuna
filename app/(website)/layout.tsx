@@ -28,7 +28,10 @@ async function sharedMetaData(params) {
       languages: {
         'es': settings?.url ? `${settings.url}/es` : undefined,
         'fr': settings?.url ? `${settings.url}/fr` : undefined,
-      }
+      },
+      types: {
+        'application/rss+xml': '/feed.xml',
+      },
     },
     openGraph: {
       title: title,
