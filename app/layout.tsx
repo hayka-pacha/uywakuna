@@ -54,6 +54,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Preload critical above-the-fold assets */}
+        <link rel="preload" href="/img/uywakuna-logo.png" as="image" type="image/png" />
       </head>
       <body className="antialiased text-gray-800 dark:bg-black dark:text-gray-400">
         <Providers>{children}</Providers>

@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
   const post = await getPostBySlug(slug);
 
   // Determine locale based on slug
-  const isES = slug === post?.slug_es;
+  const isES = slug === post?.slug_es?.current;
   const locale = isES ? 'es' : 'fr';
 
   const title = post?.[`title_${locale}`] || post?.title_es || post?.title_fr || 'Uywakuna Blog';
@@ -23,8 +23,8 @@ export async function generateMetadata({ params }) {
     : 'https://uywakuna.info/img/opengraph.jpg';
 
   // Define canonical as ES version, FR as alternate
-  const canonicalSlug = post?.slug_es || slug;
-  const alternateSlug = post?.slug_fr || slug;
+  const canonicalSlug = post?.slug_es?.current || slug;
+  const alternateSlug = post?.slug_fr?.current || slug;
 
   return {
     title,
@@ -36,8 +36,8 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `https://uywakuna.info/post/${canonicalSlug}`,
       languages: {
-        'es-ES': `/post/${post?.slug_es}`,
-        'fr-FR': `/post/${post?.slug_fr}`,
+        'es-ES': `/post/${post?.slug_es?.current}`,
+        'fr-FR': `/post/${post?.slug_fr?.current}`,
         'x-default': `/post/${canonicalSlug}`,
       }
     },
@@ -46,6 +46,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title,
       description,
+      url: `https://uywakuna.info/post/${slug}`,
       type: 'article',
       locale: isES ? 'es_ES' : 'fr_FR',
       alternateLocale: isES ? ['fr_FR'] : ['es_ES'],
@@ -91,7 +92,7 @@ export default async function PostDefault({ params }) {
   const post = await getPostBySlug(slug);
 
   // Determine locale based on slug
-  const isES = slug === post?.slug_es;
+  const isES = slug === post?.slug_es?.current;
   const locale = isES ? 'es' : 'fr';
 
   // Generate schemas
@@ -99,7 +100,7 @@ export default async function PostDefault({ params }) {
 
   // Get category name for breadcrumb
   const categoryName = post?.categories?.[0]?.[`title_${locale}`] || post?.categories?.[0]?.title_es || 'Blog';
-  const categorySlug = post?.categories?.[0]?.slug || 'blog';
+  const categorySlug = post?.categories?.[0]?.slug?.current || 'blog';
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Inicio', url: 'https://uywakuna.info' },

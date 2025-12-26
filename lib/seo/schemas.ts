@@ -14,7 +14,7 @@ export function generateArticleSchema(post: any, locale: string = 'es') {
 
   const title = post[`title_${locale}`] || post.title_es || post.title_fr;
   const excerpt = post[`excerpt_${locale}`] || post.excerpt_es || post.excerpt_fr;
-  const slug = post[`slug_${locale}`] || post.slug_es;
+  const slug = post[`slug_${locale}`]?.current || post.slug_es?.current;
 
   const imageUrl = post.mainImage?.asset
     ? urlForImage(post.mainImage)?.src
