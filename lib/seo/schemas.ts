@@ -17,7 +17,7 @@ export function generateArticleSchema(post: any, locale: string = 'es') {
   const slug = post[`slug_${locale}`] || post.slug_es;
 
   const imageUrl = post.mainImage?.asset
-    ? urlForImage(post.mainImage)?.width(1200).height(630).url()
+    ? urlForImage(post.mainImage)?.src
     : 'https://uywakuna.info/img/opengraph.jpg';
 
   return {
@@ -69,7 +69,7 @@ export function generateOrganizationSchema(settings: any) {
     "url": "https://uywakuna.info",
     "logo": {
       "@type": "ImageObject",
-      "url": settings?.logo ? urlForImage(settings.logo)?.url() : "https://uywakuna.info/img/logo.png"
+      "url": settings?.logo ? urlForImage(settings.logo)?.src : "https://uywakuna.info/img/logo.png"
     },
     "sameAs": [
       "https://github.com/hayka-pacha/uywakuna"
