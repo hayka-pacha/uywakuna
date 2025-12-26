@@ -1,0 +1,24 @@
+{
+  "name": "Uywakuna - Tu Zoológico Virtual",
+  "short_name": "Uywakuna",
+  "description": "Blog educativo bilingüe (ES/FR) sobre la fauna y biodiversidad de América del Sud",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/img/uywakuna-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "reference", "lifestyle"],
+  "lang": "es",
+  "dir": "ltr",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}

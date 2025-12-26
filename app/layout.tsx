@@ -6,13 +6,37 @@ import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter"
+  variable: "--font-inter",
+  display: "swap", // Optimize font loading
 });
 
 const lora = Lora({
   subsets: ["latin"],
-  variable: "--font-lora"
+  variable: "--font-lora",
+  display: "swap", // Optimize font loading
 });
+
+export const metadata = {
+  metadataBase: new URL('https://uywakuna.info'),
+  icons: {
+    icon: '/img/uywakuna-logo.png',
+    apple: '/img/uywakuna-logo.png',
+  },
+  manifest: '/manifest.json',
+  other: {
+    'google-site-verification': process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
+  ],
+};
 
 export default function RootLayout({
   children
@@ -24,6 +48,13 @@ export default function RootLayout({
       lang="es"
       suppressHydrationWarning
       className={cx(inter.variable, lora.variable)}>
+      <head>
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://cdn.sanity.io" />
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className="antialiased text-gray-800 dark:bg-black dark:text-gray-400">
         <Providers>{children}</Providers>
         <Analytics />
