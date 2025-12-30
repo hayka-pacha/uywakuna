@@ -40,12 +40,6 @@ export async function GET() {
     <lastmod>${now}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/contact</loc>
-    <lastmod>${now}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>`;
 
     // Dynamic blog posts with images
@@ -76,8 +70,8 @@ export async function GET() {
   </url>`);
       }
 
-      // French version
-      if (post.slug_fr?.current) {
+      // French version (only if different from Spanish slug to avoid duplicates)
+      if (post.slug_fr?.current && post.slug_fr.current !== post.slug_es?.current) {
         const url = `${baseUrl}/post/${post.slug_fr.current}`;
         const title = escapeXml(post.title_fr || '');
 

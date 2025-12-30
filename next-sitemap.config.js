@@ -36,14 +36,6 @@ module.exports = {
       lastmod: new Date().toISOString(),
     });
 
-    // Add contact page
-    result.push({
-      loc: '/contact',
-      changefreq: 'monthly',
-      priority: 0.6,
-      lastmod: new Date().toISOString(),
-    });
-
     // Add archive page
     result.push({
       loc: '/archive',
