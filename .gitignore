@@ -49,6 +49,12 @@ next-env.d.ts
 /dist
 lib/sanity/data/*.tar.gz
 
+# Large files / archives (never commit these)
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
 # SEO Strategy (confidential)
 docs/SEO_STRATEGY.md
 docs/IMPLEMENTATION_GUIDE.md
