@@ -23,8 +23,8 @@ export const metadata = {
     apple: '/img/uywakuna-logo.png',
   },
   manifest: '/manifest.json',
-  other: {
-    'google-site-verification': process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+  verification: {
+    google: 'BJ1nShDKs-t0Xb5mySGX5UkF3Hd80QD_15VS6JnLeys',
   },
 };
 

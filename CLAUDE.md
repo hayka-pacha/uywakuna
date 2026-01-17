@@ -1,6 +1,6 @@
 # Uywakuna - Project Documentation for AI Assistants
 
-**Last Updated:** 2025-12-26
+**Last Updated:** 2026-01-17
 **Project Version:** 4.0.0
 **Tech Stack:** Next.js 16 + Sanity CMS v4 + TailwindCSS
 **Purpose:** Bilingual (ES/FR) educational blog about South American wildlife
@@ -103,7 +103,12 @@ uywakuna/
 │   ├── sanity/                  # Sanity CMS integration
 │   │   ├── client.ts            # Sanity client + queries
 │   │   ├── image.ts             # Image URL builder
+│   │   ├── groq.js              # GROQ queries
 │   │   └── schemas/             # CMS content models
+│   ├── i18n/                    # Internationalization utilities
+│   │   ├── translations.js      # Translation strings
+│   │   ├── context.js           # i18n React context
+│   │   └── utils.js             # i18n helper functions
 │   └── seo/                     # SEO utilities
 │       └── schemas.ts           # Schema.org generators
 ├── public/                      # Static assets
@@ -236,6 +241,35 @@ export const metadata = {
   title,
   viewport: 'width=device-width' // Wrong in Next.js 16
 };
+```
+
+#### 6. **Use Path Aliases for Cleaner Imports**
+```javascript
+// ✅ GOOD: Use @ alias for absolute imports
+import { getPostBySlug } from '@/lib/sanity/client';
+import { urlForImage } from '@/lib/sanity/image';
+
+// ❌ BAD: Use relative imports for distant files
+import { getPostBySlug } from '../../../lib/sanity/client';
+```
+
+### TypeScript Configuration
+
+**Note:** This project uses `strict: false` in TypeScript configuration for compatibility with legacy code. However, `strictNullChecks: true` is enabled.
+
+**Best practices:**
+- Always use optional chaining (`?.`) for potentially undefined values
+- Always provide default values with nullish coalescing (`??`)
+- Type annotations are encouraged but not required
+
+**Example:**
+```typescript
+// ✅ GOOD: Safe access with optional chaining
+const title = post?.title_es ?? 'Untitled';
+const imageUrl = urlForImage(post?.mainImage)?.src;
+
+// ❌ BAD: Unsafe access
+const title = post.title_es; // Could throw if post is undefined
 ```
 
 ### File Naming Conventions
@@ -785,6 +819,46 @@ export default async function Layout({ children }) {
 export const revalidate = 60;
 ```
 
+### Pattern 6: Safe Sanity Client Usage
+
+All Sanity queries include null safety checks to prevent build failures when environment variables are missing:
+
+```javascript
+// lib/sanity/client.ts
+const client = projectId
+  ? createClient({ projectId, dataset, apiVersion, useCdn })
+  : null;
+
+export async function getPostBySlug(slug) {
+  if (client) {
+    return (await client.fetch(singlequery, { slug })) || {};
+  }
+  return {}; // Graceful fallback
+}
+```
+
+**Why this matters:**
+- Preview deployments without Sanity access won't crash
+- Build-time errors are avoided
+- Local development works even with incomplete `.env.local`
+- All functions return safe defaults (empty objects/arrays)
+
+**Pattern in action:**
+```javascript
+// ✅ GOOD: Always use this pattern for new Sanity queries
+export async function getCustomData() {
+  if (client) {
+    return (await client.fetch(customQuery)) || [];
+  }
+  return []; // Safe fallback
+}
+
+// ❌ BAD: Don't assume client exists
+export async function getCustomData() {
+  return await client.fetch(customQuery); // Will crash if client is null
+}
+```
+
 ---
 
 ## Troubleshooting
@@ -1109,6 +1183,9 @@ npm run sanity        # Open Sanity Studio (/studio)
 npm run build         # Production build + sitemap generation
 npm run sitemap       # Generate sitemap manually
 
+# Sanity CMS
+npm run sanity-export # Export Sanity dataset to lib/sanity/data/production.tar.gz
+
 # Git
 git status            # Check modified files
 git add .             # Stage all changes
@@ -1183,4 +1260,4 @@ module.exports = {
 
 _This document should be updated whenever significant changes are made to the codebase, architecture, or SEO strategy._
 
-_Last major update: 2025-12-26_
+_Last major update: 2026-01-17_
