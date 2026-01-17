@@ -9,24 +9,24 @@ export async function GET() {
     const now = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
 
     // Static pages
-    const staticPages = `  <url>
-    <loc>${baseUrl}</loc>
-    <lastmod>${now}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/about</loc>
-    <lastmod>${now}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/archive</loc>
-    <lastmod>${now}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>`;
+    const staticPages = `<url>
+<loc>${baseUrl}</loc>
+<lastmod>${now}</lastmod>
+<changefreq>daily</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>${baseUrl}/about</loc>
+<lastmod>${now}</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>${baseUrl}/archive</loc>
+<lastmod>${now}</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.9</priority>
+</url>`;
 
     // Dynamic blog posts
     const posts = await getAllPosts();
@@ -38,24 +38,24 @@ export async function GET() {
       if (post.slug_es?.current) {
         const url = `${baseUrl}/post/${post.slug_es.current}`;
 
-        pages.push(`  <url>
-    <loc>${url}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>`);
+        pages.push(`<url>
+<loc>${url}</loc>
+<lastmod>${lastmod}</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>`);
       }
 
       // French version (only if different from Spanish slug to avoid duplicates)
       if (post.slug_fr?.current && post.slug_fr.current !== post.slug_es?.current) {
         const url = `${baseUrl}/post/${post.slug_fr.current}`;
 
-        pages.push(`  <url>
-    <loc>${url}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>`);
+        pages.push(`<url>
+<loc>${url}</loc>
+<lastmod>${lastmod}</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>`);
       }
 
       return pages;
