@@ -47,29 +47,27 @@ module.exports = {
     return result;
   },
 
-  // Transform function to add image metadata for posts
+  // Transform function - simplified without image metadata
+  // Image tags can cause parsing issues in Google Search Console
+  // Google will still discover images through the page HTML
   transform: async (config, path) => {
-    // Default transformation
-    const defaultTransform = {
-      loc: path,
-      changefreq: config.changefreq,
-      priority: config.priority,
-      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-    };
-
-    // Add image metadata for blog posts
+    // Posts get higher priority
     if (path.startsWith('/post/')) {
       return {
-        ...defaultTransform,
+        loc: path,
         changefreq: 'weekly',
         priority: 0.9,
-        // Note: Image metadata would require fetching post data from Sanity
-        // This is handled server-side during build with next-sitemap postbuild
-        // For now, we prioritize posts higher for better SEO
+        lastmod: new Date().toISOString(),
       };
     }
 
-    return defaultTransform;
+    // Default transformation for other pages
+    return {
+      loc: path,
+      changefreq: config.changefreq,
+      priority: config.priority,
+      lastmod: new Date().toISOString(),
+    };
   },
 
   // Robot.txt rules (not generated since we manage manually)
