@@ -3,6 +3,7 @@ import { Providers } from "./providers";
 import { cx } from "@/utils/all";
 import { Inter, Lora } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import ServiceWorkerRegistration from "@/components/serviceWorkerRegistration";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,6 +62,7 @@ export default function RootLayout({
       <body className="antialiased text-gray-800 dark:bg-black dark:text-gray-400">
         <Providers>{children}</Providers>
         <Analytics />
+        <ServiceWorkerRegistration />
       </body>
     </html>
   );

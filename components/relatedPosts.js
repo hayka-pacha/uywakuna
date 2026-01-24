@@ -31,7 +31,10 @@ export default function RelatedPosts({ posts, currentSlug }) {
     : "Articles Similaires";
 
   return (
-    <section className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700">
+    <section
+      className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700"
+      aria-label={sectionTitle}
+    >
       <h2 className="mb-6 text-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
         {sectionTitle}
       </h2>
@@ -52,14 +55,19 @@ export default function RelatedPosts({ posts, currentSlug }) {
                 {imageProps ? (
                   <Image
                     src={imageProps.src}
-                    alt={title || "Related post"}
+                    alt={title || (locale === 'es' ? "Artículo relacionado" : "Article similaire")}
                     fill
+                    loading="lazy"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-gray-200 dark:bg-gray-700">
-                    <span className="text-4xl">🦎</span>
+                  <div
+                    className="flex h-full w-full items-center justify-center bg-gray-200 dark:bg-gray-700"
+                    role="img"
+                    aria-label={locale === 'es' ? "Imagen no disponible" : "Image non disponible"}
+                  >
+                    <span className="text-4xl" aria-hidden="true">🦎</span>
                   </div>
                 )}
               </div>

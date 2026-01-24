@@ -5,22 +5,34 @@ import Loading from "@/components/loading";
 import { getPaginatedPosts } from "@/lib/sanity/client";
 
 export const metadata = {
-  title: "Archivo | Todos los Artículos sobre Animales",
-  description: "Explora todos nuestros artículos sobre la fauna de América del Sur. Descubre jaguares, anacondas, guacamayos, perezosos y mucho más en español y francés.",
-  keywords: ["archivo", "todos los artículos", "fauna sudamericana", "animales", "blog educativo", "biodiversidad"],
+  title: "Archivo | Archives | Tous les Articles",
+  description: "Explora todos nuestros artículos sobre la fauna de América del Sur. Explorez tous nos articles sur la faune sud-américaine. Jaguares, anacondas, guacamayos y más.",
+  keywords: [
+    "archivo", "todos los artículos", "fauna sudamericana",
+    "archives", "tous les articles", "faune sud-américaine",
+    "animales", "blog educativo", "biodiversidad"
+  ],
   alternates: {
     canonical: "https://uywakuna.info/archive",
     languages: {
       'es-ES': '/archive',
       'fr-FR': '/archive',
+      'x-default': '/archive',
     }
   },
   openGraph: {
-    title: "Archivo Completo | Uywakuna",
-    description: "Todos nuestros artículos sobre la fauna y biodiversidad de América del Sur",
+    title: "Archivo Completo | Archives | Uywakuna",
+    description: "Todos nuestros artículos sobre la fauna de América del Sur. Tous nos articles sur la faune sud-américaine.",
     type: "website",
     locale: "es_ES",
+    alternateLocale: ["fr_FR"],
     url: "https://uywakuna.info/archive",
+    siteName: "Uywakuna",
+  },
+  twitter: {
+    card: "summary",
+    title: "Archivo | Uywakuna",
+    description: "Todos los artículos sobre fauna sudamericana",
   },
   robots: {
     index: true,

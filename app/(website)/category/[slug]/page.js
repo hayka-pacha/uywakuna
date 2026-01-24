@@ -1,5 +1,6 @@
 import CategoryPage from "./default";
 import { getAllCategories, getPostsByCategory } from "@/lib/sanity/client";
+import { generateBreadcrumbSchema } from "@/lib/seo/schemas";
 
 export async function generateStaticParams() {
   const categories = await getAllCategories();
@@ -61,8 +62,34 @@ export async function generateMetadata({ params }) {
 export default async function CategoryDefault({ params }) {
   const { slug } = await params;
   const posts = await getPostsByCategory(slug);
-  
-  return <CategoryPage posts={posts} slug={slug} />;
+
+  // Get category info for schema
+  const category = posts?.[0]?.categories?.find(
+    (cat) => cat.slug?.current === slug
+  );
+  const categoryTitle = category?.title_es || category?.title_fr || slug;
+
+  // Generate BreadcrumbList schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Inicio', url: 'https://uywakuna.info' },
+    { name: categoryTitle, url: `https://uywakuna.info/category/${slug}` }
+  ]);
+
+  return (
+    <>
+      {/* JSON-LD Structured Data - BreadcrumbList */}
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+        >
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      )}
+
+      <CategoryPage posts={posts} slug={slug} />
+    </>
+  );
 }
 
 export const revalidate = 60;

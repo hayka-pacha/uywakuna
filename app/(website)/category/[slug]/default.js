@@ -2,6 +2,7 @@
 
 import Container from "@/components/container";
 import PostList from "@/components/postlist";
+import Breadcrumb from "@/components/breadcrumb";
 import { useLanguage } from "@/lib/i18n/context";
 import { getLocalizedField } from "@/lib/i18n/utils";
 
@@ -21,9 +22,15 @@ export default function CategoryPage({ posts, slug }) {
     ? getLocalizedField(category, "description", locale)
     : "";
 
+  // Breadcrumb items for visual navigation
+  const breadcrumbItems = [
+    { name: categoryTitle, url: `/category/${slug}` }
+  ];
+
   return (
     <Container>
-      <div className="mt-10">
+      <div className="mt-6">
+        <Breadcrumb items={breadcrumbItems} />
         <h1 className="text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
           {categoryTitle}
         </h1>

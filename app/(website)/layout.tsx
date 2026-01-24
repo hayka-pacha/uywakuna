@@ -1,4 +1,4 @@
-import { getSettings } from "@/lib/sanity/client";
+import { getSettings, getTopCategories } from "@/lib/sanity/client";
 import Footer from "@/components/footer";
 import { urlForImage } from "@/lib/sanity/image";
 import Navbar from "@/components/navbar";
@@ -70,13 +70,14 @@ export async function generateMetadata({ params }) {
 
 export default async function Layout({ children, params }) {
   const settings = await getSettings();
+  const categories = await getTopCategories();
   return (
     <>
       <Navbar {...settings} />
 
-      <div>{children}</div>
+      <main>{children}</main>
 
-      <Footer {...settings} />
+      <Footer {...settings} categories={categories} />
     </>
   );
 }

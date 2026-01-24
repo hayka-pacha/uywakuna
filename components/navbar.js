@@ -13,7 +13,12 @@ import LanguageSelector from "@/components/languageSelector";
 import { useLanguage } from "@/lib/i18n/context";
 
 export default function Navbar(props) {
-  const { t } = useLanguage();
+  const { locale, t } = useLanguage();
+
+  // Localized alt text for logo
+  const logoAlt = locale === 'es'
+    ? "Uywakuna - Tu zoológico virtual"
+    : "Uywakuna - Ton zoo virtuel";
 
   const leftmenu = useMemo(() => [
     {
@@ -55,7 +60,7 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          className="px-5 py-3 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400 min-h-[44px] flex items-center"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           {item.label}
@@ -70,7 +75,7 @@ export default function Navbar(props) {
                       <>
                         <Image
                           {...urlForImage(props.logo)}
-                          alt="Uywakuna - Tu zoológico virtual"
+                          alt={logoAlt}
                           priority={true}
                           sizes="(max-width: 640px) 100vw, 200px"
                           className="w-20 mb-1"
@@ -98,7 +103,7 @@ export default function Navbar(props) {
                       <>
                         <Image
                           {...urlForImage(props.logoalt || props.logo)}
-                          alt="Uywakuna - Tu zoológico virtual"
+                          alt={logoAlt}
                           priority={true}
                           sizes="(max-width: 640px) 100vw, 200px"
                           className="w-20 mb-1"
@@ -158,7 +163,7 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          className="px-5 py-3 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400 min-h-[44px] flex items-center"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           <span> {item.label}</span>
@@ -189,7 +194,7 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="w-full px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          className="w-full px-5 py-3 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400 min-h-[44px] flex items-center"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           {item.label}

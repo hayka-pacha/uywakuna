@@ -12,6 +12,7 @@ import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
 import TranslationBadge from "@/components/translationBadge";
 import RelatedPosts from "@/components/relatedPosts";
+import Breadcrumb from "@/components/breadcrumb";
 import { useLanguage } from "@/lib/i18n/context";
 import { getLocalizedField, hasTranslation } from "@/lib/i18n/utils";
 
@@ -37,12 +38,28 @@ export default function Post(props) {
   const body = post[`body_${locale}`] || post.body_es || post.body_fr;
   const estReadingTime = post[`estReadingTime_${locale}`] || post.estReadingTime_es || 5;
 
+  // Get category info for breadcrumb
+  const category = post?.categories?.[0];
+  const categoryTitle = category
+    ? getLocalizedField(category, "title", locale)
+    : null;
+  const categorySlug = category?.slug?.current;
+
+  // Breadcrumb items for visual navigation
+  const breadcrumbItems = [
+    ...(categoryTitle && categorySlug
+      ? [{ name: categoryTitle, url: `/category/${categorySlug}` }]
+      : []),
+    { name: title || post?.title_es || post?.title_fr, url: '#' }
+  ];
+
   return (
     <>
       <Container className="!pt-0">
         <div className="mx-auto max-w-screen-md ">
+          <Breadcrumb items={breadcrumbItems} />
           <TranslationBadge post={post} />
-          
+
           <div className="flex justify-center">
             <CategoryLabel categories={post.categories} />
           </div>
