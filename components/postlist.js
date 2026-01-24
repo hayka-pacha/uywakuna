@@ -41,7 +41,7 @@ export default function PostList({
         )}>
         <div
           className={cx(
-            "relative overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800 w-full",
+            "relative overflow-hidden rounded-md bg-gray-100 dark:bg-gray-800 w-full",
             aspect === "landscape"
               ? "pb-[56.25%]"
               : aspect === "custom"
@@ -60,7 +60,7 @@ export default function PostList({
                 })}
                 alt={post.mainImage.alt || "Thumbnail"}
                 priority={preloadImage ? true : false}
-                className="object-cover transition-all"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
@@ -74,16 +74,20 @@ export default function PostList({
 
         <div className={cx(minimal && "flex items-center")}>
           <div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 min-h-[24px]">
               <CategoryLabel
                 categories={post.categories}
                 nomargin={minimal}
               />
-              {!isTranslated && (
-                <span className="rounded bg-yellow-100 px-2 py-0.5 text-xs text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300">
-                  {locale === "es" ? "En FR" : "En ES"}
-                </span>
-              )}
+              <span
+                className={cx(
+                  "rounded bg-yellow-100 px-2 py-0.5 text-xs text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300",
+                  isTranslated && "invisible"
+                )}
+                aria-hidden={isTranslated}
+              >
+                {locale === "es" ? "En FR" : "En ES"}
+              </span>
             </div>
             <h2
               className={cx(

@@ -143,3 +143,45 @@ export function generateWebSiteSchema(settings: any) {
     }
   };
 }
+
+/**
+ * Generates CollectionPage schema for category/archive pages
+ * @see https://schema.org/CollectionPage
+ * @see https://schema.org/ItemList
+ */
+export function generateCollectionPageSchema(
+  category: { title_es?: string; title_fr?: string; description_es?: string; description_fr?: string; slug?: { current: string } },
+  posts: any[],
+  locale: string = 'es'
+) {
+  if (!posts || posts.length === 0) return null;
+
+  const categoryTitle = category?.[`title_${locale}` as keyof typeof category] as string || category?.title_es || 'Categoría';
+  const categoryDesc = category?.[`description_${locale}` as keyof typeof category] as string || category?.description_es || '';
+  const categorySlug = category?.slug?.current || '';
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": categoryTitle,
+    "description": categoryDesc || `Artículos sobre ${categoryTitle} en Uywakuna`,
+    "url": `https://uywakuna.info/category/${categorySlug}`,
+    "inLanguage": locale === 'fr' ? 'fr-FR' : 'es-ES',
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Uywakuna",
+      "url": "https://uywakuna.info"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": categoryTitle,
+      "numberOfItems": posts.length,
+      "itemListElement": posts.slice(0, 20).map((post: any, index: number) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `https://uywakuna.info/post/${post[`slug_${locale}`]?.current || post.slug_es?.current || post.slug_es}`,
+        "name": post[`title_${locale}`] || post.title_es || post.title_fr
+      }))
+    }
+  };
+}

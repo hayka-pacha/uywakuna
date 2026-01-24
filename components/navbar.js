@@ -73,13 +73,16 @@ export default function Navbar(props) {
                   <Link href="/" className="flex flex-col items-center dark:hidden">
                     {props.logo ? (
                       <>
-                        <Image
-                          {...urlForImage(props.logo)}
-                          alt={logoAlt}
-                          priority={true}
-                          sizes="(max-width: 640px) 100vw, 200px"
-                          className="w-20 mb-1"
-                        />
+                        <div className="relative w-20 aspect-square mb-1">
+                          <Image
+                            {...urlForImage(props.logo)}
+                            alt={logoAlt}
+                            priority={true}
+                            sizes="80px"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
                         <span className="text-lg font-bold text-gray-800">
                           {props.title_es || props.title_fr || "Uywakuna"}
                         </span>
@@ -101,13 +104,16 @@ export default function Navbar(props) {
                   <Link href="/" className="hidden flex-col items-center dark:flex">
                     {(props.logoalt || props.logo) ? (
                       <>
-                        <Image
-                          {...urlForImage(props.logoalt || props.logo)}
-                          alt={logoAlt}
-                          priority={true}
-                          sizes="(max-width: 640px) 100vw, 200px"
-                          className="w-20 mb-1"
-                        />
+                        <div className="relative w-20 aspect-square mb-1">
+                          <Image
+                            {...urlForImage(props.logoalt || props.logo)}
+                            alt={logoAlt}
+                            priority={true}
+                            sizes="80px"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
                         <span className="text-lg font-bold text-gray-100">
                           {props.title_es || props.title_fr || "Uywakuna"}
                         </span>

@@ -78,14 +78,12 @@ export default function Footer(props) {
                   <li key={category._id}>
                     <Link
                       href={`/category/${catSlug}`}
-                      className="text-sm text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                      className="inline-flex items-center text-sm text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
                     >
-                      {catTitle}
-                      {category.count && (
-                        <span className="ml-1 text-xs text-gray-400">
-                          ({category.count})
-                        </span>
-                      )}
+                      <span>{catTitle}</span>
+                      <span className="ml-1 w-8 text-xs text-gray-400 tabular-nums">
+                        {category.count ? `(${category.count})` : ""}
+                      </span>
                     </Link>
                   </li>
                 );

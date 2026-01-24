@@ -6,8 +6,9 @@ import { urlForImage } from "@/lib/sanity/image";
 import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/context";
 
-export default function About({ aboutData }) {
+export default function About({ aboutData, faqs }) {
   const { locale } = useLanguage();
+  const localizedFaqs = faqs?.[locale] || faqs?.es || [];
   
   // Fallback content if Sanity data is not available
   const title = aboutData?.[`title_${locale}`] || aboutData?.title_es || "About";
@@ -62,7 +63,7 @@ export default function About({ aboutData }) {
           <div className="flex items-start">
             <div className="w-full space-y-6">
               {content ? (
-                <div className="prose prose-base dark:prose-invert 
+                <div className="prose prose-base dark:prose-invert
                   prose-headings:mb-4 prose-headings:mt-6 prose-headings:font-semibold prose-headings:text-gray-900 dark:prose-headings:text-white
                   prose-p:mb-4 prose-p:leading-relaxed prose-p:text-gray-700 dark:prose-p:text-gray-300
                   prose-a:font-medium prose-a:text-blue-600 hover:prose-a:text-blue-700 dark:prose-a:text-blue-400
@@ -89,8 +90,8 @@ export default function About({ aboutData }) {
                     {locale === "es" ? "Contenido no disponible" : "Contenu non disponible"}
                   </h3>
                   <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-                    {locale === "es" 
-                      ? "Cree su contenido en Sanity Studio" 
+                    {locale === "es"
+                      ? "Cree su contenido en Sanity Studio"
                       : "Créez votre contenu dans Sanity Studio"}
                   </p>
                   <a
@@ -115,6 +116,42 @@ export default function About({ aboutData }) {
             </div>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        {localizedFaqs && localizedFaqs.length > 0 && (
+          <div className="mt-16">
+            <div className="mb-8 text-center">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                {locale === "es" ? "Preguntas Frecuentes" : "Questions Fréquentes"}
+              </h2>
+              <p className="mt-2 text-gray-600 dark:text-gray-400">
+                {locale === "es"
+                  ? "Encuentra respuestas a las preguntas más comunes"
+                  : "Trouvez des réponses aux questions les plus courantes"}
+              </p>
+            </div>
+            <div className="mx-auto max-w-3xl space-y-4">
+              {localizedFaqs.map((faq, index) => (
+                <details
+                  key={index}
+                  className="group rounded-lg border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800"
+                >
+                  <summary className="flex cursor-pointer items-center justify-between p-4 font-medium text-gray-900 dark:text-white">
+                    <span>{faq.question}</span>
+                    <span className="ml-4 shrink-0 transition-transform duration-200 group-open:rotate-180">
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <p className="border-t border-gray-200 p-4 text-gray-600 dark:border-gray-700 dark:text-gray-400">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </Container>
   );

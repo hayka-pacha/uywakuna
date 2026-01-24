@@ -1,6 +1,6 @@
 import CategoryPage from "./default";
 import { getAllCategories, getPostsByCategory } from "@/lib/sanity/client";
-import { generateBreadcrumbSchema } from "@/lib/seo/schemas";
+import { generateBreadcrumbSchema, generateCollectionPageSchema } from "@/lib/seo/schemas";
 
 export async function generateStaticParams() {
   const categories = await getAllCategories();
@@ -75,6 +75,9 @@ export default async function CategoryDefault({ params }) {
     { name: categoryTitle, url: `https://uywakuna.info/category/${slug}` }
   ]);
 
+  // Generate CollectionPage schema for better indexing
+  const collectionPageSchema = generateCollectionPageSchema(category, posts, 'es');
+
   return (
     <>
       {/* JSON-LD Structured Data - BreadcrumbList */}
@@ -84,6 +87,16 @@ export default async function CategoryDefault({ params }) {
           suppressHydrationWarning
         >
           {JSON.stringify(breadcrumbSchema)}
+        </script>
+      )}
+
+      {/* JSON-LD Structured Data - CollectionPage */}
+      {collectionPageSchema && (
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+        >
+          {JSON.stringify(collectionPageSchema)}
         </script>
       )}
 
