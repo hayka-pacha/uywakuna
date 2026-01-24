@@ -55,11 +55,11 @@ export default async function ArchivePage({ searchParams }) {
     <>
       <Container className="relative">
         <h1 className="text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
-          Archive
+          Archivo
         </h1>
         <div className="text-center">
-          <p className="mt-2 text-lg">
-            See all posts we have ever written.
+          <p className="mt-2 text-lg text-gray-600 dark:text-gray-400">
+            Todos nuestros artículos sobre la fauna y biodiversidad de América del Sur.
           </p>
         </div>
         <Suspense

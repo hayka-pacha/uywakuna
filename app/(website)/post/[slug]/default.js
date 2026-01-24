@@ -11,6 +11,7 @@ import { parseISO, format } from "date-fns";
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
 import TranslationBadge from "@/components/translationBadge";
+import RelatedPosts from "@/components/relatedPosts";
 import { useLanguage } from "@/lib/i18n/context";
 import { getLocalizedField, hasTranslation } from "@/lib/i18n/utils";
 
@@ -110,6 +111,14 @@ export default function Post(props) {
             </Link>
           </div>
           {post.author && <AuthorCard author={post.author} />}
+
+          {/* Related Posts for internal linking */}
+          {post.related && post.related.length > 0 && (
+            <RelatedPosts
+              posts={post.related}
+              currentSlug={post?.slug_es?.current || post?.slug_fr?.current}
+            />
+          )}
         </article>
       </Container>
     </>

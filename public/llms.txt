@@ -2,12 +2,20 @@
 
 > Blog bilingue éducatif (Espagnol/Français) dédié à la découverte des animaux et de la nature. Explorez la biodiversité mondiale à travers des articles détaillés sur la faune, les habitats naturels et la conservation des espèces.
 
+## Langues Disponibles
+
+Le site est entièrement bilingue avec URLs distinctes :
+- **Español (ES)** : Langue principale, contenu scientifiquement rigoureux
+- **Français (FR)** : Traductions complètes de tous les contenus
+- Chaque article possède une URL ES et une URL FR avec balises hreflang
+
 ## Thématiques Principales
 
 ### Animaux & Faune Sauvage
-- **Mammifères** : Jaguars, paresseux, dauphins roses de l'Amazone, singes pygmées
-- **Oiseaux** : Condors, toucans, aras hyacinthes
-- **Reptiles** : Anacondas, caïmans noirs
+- **Mammifères** : Jaguars, panthères, pumas, paresseux, dauphins roses, singes, ours, tapirs, loutres, lamantins
+- **Oiseaux** : Condors, toucans, aras, hoatzins, ibijaux, tangaras, martins-pêcheurs, coqs-de-roche
+- **Reptiles** : Anacondas, boas, caïmans, iguanes, tortues, serpents venimeux
+- **Amphibiens** : Grenouilles de cristal, grenouilles venimeuses, rainettes
 - **Poissons** : Piranhas
 - **Insectes** : Fourmis coupeuses de feuilles
 
@@ -23,7 +31,96 @@
 - Protection de la faune sauvage
 - Éducation environnementale
 
-## Pages Clés
+## Index des Mots-Clés
+
+### Félins
+jaguar, panthera onca, panthère noire, pantera negra, puma, puma concolor
+
+### Primates
+mono ardilla, singe écureuil, saimiri sciureus, titi pigmeo, ouistiti pygmée, cebuella pygmaea, mono aullador, hurleur roux, alouatta seniculus
+
+### Mammifères Aquatiques
+delfin rosado, dauphin rose, inia geoffrensis, nutria gigante, loutre géante, pteronura brasiliensis, manati, lamantin, trichechus inunguis
+
+### Mammifères Terrestres
+oso perezoso, paresseux, bradipus variegatus, oso de anteojos, ours à lunettes, tremarctos ornatus, tapir, tapirus terrestris, oso hormiguero, fourmilier, tamandua, capibara, capybara, hydrochoerus hydrochaeris
+
+### Oiseaux
+condor, vultur gryphus, toucan, tucan, ramphastos, guacamayo azul, ara hyacinthe, anodorhynchus hyacinthinus, guacamayo escarlata, ara rouge, ara macao, hoatzin, opisthocomus hoazin, gallito de las rocas, coq de roche, rupicola peruvianus, ibijau, nyctibius grandis, tangara, tangara chilensis, martin pescador, martin-pêcheur, alcedo atthis, aguila arpia, aigle harpie, harpia harpyja
+
+### Reptiles
+anaconda, eunectes murinus, boa esmeralda, boa émeraude, corallus caninus, caiman negro, caïman noir, melanosuchus niger, iguana, serpiente de terciopelo, fer de lance, bothrops lanceolatus, tortuga taricaya, tortue taricaya, podocnemis unifilis
+
+### Amphibiens
+rana de cristal, grenouille de cristal, centrolenidae, rana venenosa, grenouille venimeuse, phillobates terribilis, rana arboricola, rainette, hylidae
+
+### Poissons & Insectes
+pirana, piranha, serrasalmus, hormigas cortadoras, fourmis coupeuses
+
+## Catalogue Complet des Articles
+
+### Mammifères (18 espèces)
+
+| Animal | URL ES | URL FR |
+|--------|--------|--------|
+| Jaguar | `/post/jaguar-panthera-onca` | `/post/jaguar-panthera-onca` |
+| Panthère Noire | `/post/pantera-negra-panthera-onca` | `/post/panthere-noire-panthera-onca` |
+| Puma | `/post/puma-puma-concolor` | `/post/puma-puma-concolor` |
+| Paresseux | `/post/el-oso-perezoso-bradipus-variegatus` | `/post/le-paresseux-bradipus-variegatus` |
+| Dauphin Rose | `/post/delfin-rosado-del-amazonas-inia-geoffrensis` | `/post/dauphin-rose-de-l-amazone-inia-geoffrensis` |
+| Loutre Géante | `/post/nutria-gigante-pteronura-brasiliensis` | `/post/loutre-geante-pteronura-brasiliensis` |
+| Lamantin | `/post/manati-trichechus-inunguis` | `/post/lamantin-trichechus-inunguis` |
+| Tapir | `/post/tapir-tapirus-terrestris` | `/post/tapir-tapirus-terrestris` |
+| Capybara | `/post/capibara-hydrochoerus-hydrochaeris` | `/post/capibara-hydrochoerus-hydrochaeris` |
+| Ours à Lunettes | `/post/oso-de-anteojos-tremarctos-ornatus` | `/post/ours-a-lunettes-tremarctos-ornatus` |
+| Fourmilier | `/post/oso-hormiguero-tamandua` | `/post/fourmilier-tamandua` |
+| Singe Écureuil | `/post/mono-ardilla-saimiri-sciureus` | `/post/singe-ecureuil-saimiri-sciureus` |
+| Hurleur Roux | `/post/mono-aullador-alouatta-seniculus` | `/post/hurleur-roux-alouatta-seniculus` |
+| Ouistiti Pygmée | `/post/titi-pigmeo-cebuella-pigmaea` | `/post/ouistiti-pygmee-cebuella-pigmaea` |
+| Titi Lion | `/post/titi-leon-cebuella-pygmaea` | `/post/titi-lion-cebuella-pygmaea` |
+
+### Oiseaux (12 espèces)
+
+| Animal | URL ES | URL FR |
+|--------|--------|--------|
+| Condor des Andes | `/post/el-condor-vultur-gryphus` | `/post/le-condor-vultur-gryphus` |
+| Toucan | `/post/tucan-ramphastos-tueanus` | `/post/toucan-ramphastos-tueanus` |
+| Ara Hyacinthe | `/post/guacamayo-azul-anodorhynchus-hyacinthinus` | `/post/ara-hyacinthe-anodorhynchus-hyacinthinus` |
+| Ara Rouge | `/post/guacamayo-escarlata-ara-macao` | `/post/ara-rouge-ara-macao` |
+| Hoatzin | `/post/hoatzin-opisthocomus-hoazin` | `/post/hoazin-huppe-opisthocomus-hoazin` |
+| Coq-de-roche | `/post/gallito-de-las-rocas-rupicola-peruvianus` | `/post/coq-de-roche-peruvien-rupicola-peruvianus` |
+| Grand Ibijau | `/post/grande-ibijau-nyctibius-grandis` | `/post/grand-ibijau-nyctibius-grandis` |
+| Tangara | `/post/tangara-del-paraiso-tangara-chilensis` | `/post/calliste-septicolore-tangara-chilensis` |
+| Martin-pêcheur | `/post/martin-pescador-alcedo-atthis` | `/post/martin-pecheur-alcedo-atthis` |
+| Aigle Harpie | `/post/aguila-arpia-harpia-harpyja` | `/post/aigle-harpie-harpia-harpyja` |
+
+### Reptiles (8 espèces)
+
+| Animal | URL ES | URL FR |
+|--------|--------|--------|
+| Anaconda | `/post/anaconda-eunectes-murinus` | `/post/anaconda-eunectes-murinus` |
+| Boa Émeraude | `/post/boa-esmeralda-corallus-caninus` | `/post/boa-emeraude-corallus-caninus` |
+| Caïman Noir | `/post/caiman-negro-melanosuchus-niger` | `/post/caiman-noir-melanosuchus-niger` |
+| Iguane | `/post/iguana-iguana` | `/post/iguane-iguana` |
+| Fer de Lance | `/post/la-serpiente-de-terciopelo-bothrops-lanceolatus` | `/post/le-fer-de-lance-bothrops-lanceolatus` |
+| Tortue Taricaya | `/post/tortuga-de-taricaya-podocnemis-unifilis` | `/post/tortue-de-taricaya-podocnemis-unifilis` |
+
+### Amphibiens (3 espèces)
+
+| Animal | URL ES | URL FR |
+|--------|--------|--------|
+| Grenouille de Cristal | `/post/rana-de-cristal-centrolenidae` | `/post/grenouille-de-cristal-centrolenidae` |
+| Grenouille Venimeuse | `/post/rana-venenosa-phillobates-terribilis` | `/post/grenouille-pigmee-phillobates-terribilis` |
+| Rainette | `/post/rana-arbolica-hylidae` | `/post/rainettes-et-leurs-allies-hylidae` |
+
+### Poissons & Insectes (2 espèces)
+
+| Animal | URL ES | URL FR |
+|--------|--------|--------|
+| Piranha | `/post/pirana-serrasalmus` | `/post/piranha-serrasalmus` |
+| Fourmis Coupeuses | `/post/hormigas-cortadoras-de-hojas` | `/post/fourmis-coupeuses-de-feuilles` |
+
+## Pages Principales
 
 - `/` : Accueil - Découvrez tous nos articles sur la faune
 - `/about` : À propos d'Uywakuna et notre mission éducative
@@ -32,38 +129,24 @@
 - `/category/aves` : Articles sur les oiseaux
 - `/category/reptiles` : Articles sur les reptiles
 - `/category/felino` : Focus sur les félins sauvages
+- `/category/anfibios` : Articles sur les amphibiens
 
-## Articles Phares
+## Taxonomie & Classifications
 
-### Mammifères
-- `/post/jaguar-panthera-onca` : Le jaguar, plus grand félin d'Amérique
-- `/post/el-oso-perezoso-bradipus-variegatus` : Le paresseux et son mode de vie unique
-- `/post/delfin-rosado-del-amazonas-inia-geoffrensis` : Le dauphin rose d'Amazonie
-
-### Oiseaux
-- `/post/el-condor-vultur-gryphus` : Le condor des Andes, roi des cieux
-- `/post/guacamayo-azul-anodorhynchus-hyacinthinus` : L'ara hyacinthe, perroquet géant
-- `/post/tucan-ramphastos-tueanus` : Le toucan et son bec emblématique
-
-### Reptiles
-- `/post/anaconda-eunectes-murinus` : L'anaconda, serpent géant aquatique
-- `/post/caiman-negro-melanosuchus-niger` : Le caïman noir de l'Amazonie
-
-## Langues Disponibles
-
-Le site est entièrement bilingue :
-- **Español (ES)** : Langue par défaut, articles scientifiquement rigoureux
-- **Français (FR)** : Traductions complètes de tous les contenus
-
-Chaque article existe en deux versions avec URLs distinctes.
+Tous les articles suivent la nomenclature scientifique officielle :
+- Nom commun (ES/FR)
+- Nom scientifique (latin binomial)
+- Classification complète (Règne, Embranchement, Classe, Ordre, Famille, Genre, Espèce)
+- Statut de conservation IUCN
 
 ## Informations Techniques
 
 - **CMS** : Sanity CMS v4
 - **Framework** : Next.js 16 avec App Router
 - **Sitemap** : https://uywakuna.info/sitemap.xml
+- **RSS Feed** : https://uywakuna.info/feed.xml
 - **Fréquence de mise à jour** : Articles ajoutés régulièrement
-- **Optimisation images** : Toutes les images sont optimisées via Sanity CDN
+- **Optimisation images** : AVIF/WebP via Sanity CDN
 
 ## Public Cible
 
@@ -71,13 +154,6 @@ Chaque article existe en deux versions avec URLs distinctes.
 - Familles recherchant du contenu éducatif sur les animaux
 - Passionnés de nature et de biodiversité
 - Communauté hispanophone et francophone
-
-## Taxonomie & Classifications
-
-Tous les articles suivent la nomenclature scientifique officielle :
-- Nom commun (ES/FR)
-- Nom scientifique (latin)
-- Classification complète (Règne, Embranchement, Classe, Ordre, Famille, Genre, Espèce)
 
 ## Contact
 

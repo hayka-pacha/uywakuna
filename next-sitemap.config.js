@@ -3,9 +3,11 @@ module.exports = {
   siteUrl: process.env.SITE_URL || "https://uywakuna.info",
   generateRobotsTxt: false, // We manage robots.txt manually for better AI bot control
   generateIndexSitemap: false, // Single sitemap.xml is sufficient for small sites
-  changefreq: 'daily',
+  changefreq: 'weekly', // More accurate for blog content
   priority: 0.7,
   sitemapSize: 7000, // All URLs in one file
+  // Note: lastmod uses build time as Sanity dates require API calls at build time
+  // For true lastmod accuracy, consider implementing a dynamic sitemap API route
 
   // Optimize for SEO
   exclude: [

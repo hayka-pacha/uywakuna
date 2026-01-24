@@ -35,7 +35,7 @@ export default function Featured({ post, pathPrefix }) {
               alt={post.mainImage?.alt || "Thumbnail"}
               priority
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </Link>
@@ -62,7 +62,7 @@ export default function Featured({ post, pathPrefix }) {
                         alt={post?.author?.name}
                         className="object-cover rounded-full"
                         fill
-                        sizes="100vw"
+                        sizes="20px"
                       />
                     </div>
                   )}
