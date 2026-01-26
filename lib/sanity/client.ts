@@ -65,7 +65,7 @@ export async function getAllPostsSlugs() {
   if (client) {
     const posts = (await client.fetch(pathquery)) || [];
     const slugs: { slug: string }[] = [];
-    
+
     posts.forEach((post: any) => {
       if (post.slug_es) {
         slugs.push({ slug: post.slug_es });
@@ -74,7 +74,7 @@ export async function getAllPostsSlugs() {
         slugs.push({ slug: post.slug_fr });
       }
     });
-    
+
     return slugs;
   }
   return [];

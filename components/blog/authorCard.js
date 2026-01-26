@@ -7,7 +7,7 @@ import { useLanguage } from "@/lib/i18n/context";
 export default function AuthorCard({ author }) {
   const { locale } = useLanguage();
   const imageProps = author?.image ? urlForImage(author.image) : null;
-  
+
   return (
     <div className="mt-3 rounded-2xl bg-gray-50 px-8 py-8 text-gray-500 dark:bg-gray-900 dark:text-gray-400">
       <div className="flex items-center space-x-4">

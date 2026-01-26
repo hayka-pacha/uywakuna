@@ -64,4 +64,3 @@ export default function CategoryPage({ posts, slug }) {
     </Container>
   );
 }
-

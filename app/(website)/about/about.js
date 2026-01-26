@@ -9,7 +9,7 @@ import { useLanguage } from "@/lib/i18n/context";
 export default function About({ aboutData, faqs }) {
   const { locale } = useLanguage();
   const localizedFaqs = faqs?.[locale] || faqs?.es || [];
-  
+
   // Fallback content if Sanity data is not available
   const title = aboutData?.[`title_${locale}`] || aboutData?.title_es || "About";
   const subtitle = aboutData?.[`subtitle_${locale}`] || aboutData?.subtitle_es || "";

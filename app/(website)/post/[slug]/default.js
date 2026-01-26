@@ -33,7 +33,7 @@ export default function Post(props) {
   const AuthorimageProps = post?.author?.image
     ? urlForImage(post.author.image)
     : null;
-  
+
   const title = getLocalizedField(post, "title", locale);
   const body = post[`body_${locale}`] || post.body_es || post.body_fr;
   const estReadingTime = post[`estReadingTime_${locale}`] || post.estReadingTime_es || 5;

@@ -13,7 +13,8 @@
     "start": "next start",
     "sanity": "sanity dev",
     "sanity-export": "sanity dataset export production lib/sanity/data/production.tar.gz",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "pre-commit install || true"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",

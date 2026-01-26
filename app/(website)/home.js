@@ -7,7 +7,7 @@ import { useLanguage } from "@/lib/i18n/context";
 
 export default function Post({ posts }) {
   const { t } = useLanguage();
-  
+
   return (
     <>
       {posts && (

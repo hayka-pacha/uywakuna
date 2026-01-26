@@ -43,7 +43,7 @@ async function translateText(
 // Fonction pour extraire le texte du blockContent
 function extractTextFromBlocks(blocks?: any[]): string {
   if (!blocks || !Array.isArray(blocks)) return '';
-  
+
   return blocks
     .map((block) => {
       if (block._type === 'block' && block.children) {
@@ -60,7 +60,7 @@ function extractTextFromBlocks(blocks?: any[]): string {
 // Fonction pour reconstruire les blocks avec le texte traduit
 function rebuildBlocks(originalBlocks: any[], translatedText: string): any[] {
   const paragraphs = translatedText.split('\n\n').filter(Boolean);
-  
+
   return paragraphs.map((paragraph, index) => ({
     _type: 'block',
     _key: `block-${Date.now()}-${index}`,
@@ -206,7 +206,7 @@ export const TranslateAction: DocumentActionComponent = (props) => {
             <Text size={2} weight="semibold">
               Traduction automatique (DeepL)
             </Text>
-            
+
             {translationStatus && (
               <Card padding={3} tone={translationStatus.includes('✅') ? 'positive' : translationStatus.includes('❌') ? 'critical' : 'primary'} radius={2}>
                 <Text size={1}>{translationStatus}</Text>
@@ -227,7 +227,7 @@ export const TranslateAction: DocumentActionComponent = (props) => {
                   disabled={isTranslating || !doc || !doc.title_es}
                   style={{ width: '100%' }}
                 />
-                
+
                 <Button
                   text="Français → Espagnol"
                   icon={TranslateIcon}
@@ -250,4 +250,3 @@ export const TranslateAction: DocumentActionComponent = (props) => {
     } : false,
   };
 };
-

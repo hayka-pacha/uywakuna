@@ -9,7 +9,7 @@ export default function Post({ posts, searchParams }) {
   const page = searchParams?.page;
   const pageIndex = parseInt(page, 10) || 1;
   const POSTS_PER_PAGE = 6;
-  
+
   const isFirstPage = pageIndex < 2;
   const isLastPage = posts?.length < POSTS_PER_PAGE;
 

@@ -20,14 +20,14 @@ export default function PostList({
   fontWeight
 }) {
   const { locale, t } = useLanguage();
-  
+
   const imageProps = post?.mainImage
     ? urlForImage(post.mainImage)
     : null;
   const AuthorimageProps = post?.author?.image
     ? urlForImage(post.author.image)
     : null;
-  
+
   const title = getLocalizedField(post, "title", locale);
   const excerpt = getLocalizedField(post, "excerpt", locale);
   const slug = getLocalizedSlug(post, locale);

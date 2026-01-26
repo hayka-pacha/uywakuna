@@ -10,7 +10,7 @@ export default function CategoryLabel({
   nomargin = false
 }) {
   const { locale } = useLanguage();
-  
+
   return (
     <div className="flex gap-3">
       {categories?.length &&

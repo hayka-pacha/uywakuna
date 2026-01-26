@@ -1,0 +1,47 @@
+# Gitleaks configuration
+# https://github.com/gitleaks/gitleaks
+
+title = "Gitleaks config for Uywakuna"
+
+[extend]
+# Use the default gitleaks rules
+useDefault = true
+
+# Files and paths to ignore
+[allowlist]
+paths = [
+    '''.env\.local\.example''',
+    '''\.env\.example''',
+    '''package-lock\.json''',
+    '''pnpm-lock\.yaml''',
+    '''yarn\.lock''',
+]
+
+# Specific patterns to ignore (false positives)
+regexes = [
+    # Example placeholder values
+    '''your-.*-here''',
+    '''placeholder''',
+    '''xxxxxxxx''',
+    # Public Sanity project ID (not a secret)
+    '''NEXT_PUBLIC_SANITY_PROJECT_ID''',
+]
+
+# Custom rules for this project
+[[rules]]
+id = "vercel-token"
+description = "Vercel Token"
+regex = '''(?i)vercel[_-]?token['\"]?\s*[:=]\s*['\"]?([a-zA-Z0-9_-]{24,})'''
+keywords = ["vercel"]
+
+[[rules]]
+id = "deepl-api-key"
+description = "DeepL API Key"
+regex = '''[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}:fx'''
+keywords = ["deepl"]
+
+[[rules]]
+id = "sanity-token"
+description = "Sanity Token"
+regex = '''sk[a-zA-Z0-9]{20,}'''
+keywords = ["sanity"]

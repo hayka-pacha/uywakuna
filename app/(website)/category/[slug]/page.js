@@ -106,4 +106,3 @@ export default async function CategoryDefault({ params }) {
 }
 
 export const revalidate = 60;
-

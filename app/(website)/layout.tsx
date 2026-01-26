@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 
 async function sharedMetaData(params) {
   const settings = await getSettings();
-  
+
   // Default to Spanish
   const locale = "es";
   const title = settings?.[`title_${locale}`] || settings?.title_es || "Uywakuna";
